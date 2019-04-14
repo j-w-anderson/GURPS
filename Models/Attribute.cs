@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Engine
+{
+    public class Attribute:BaseNotificationClass
+    {
+        public string Name { get; set; }
+        public string Initials { get; set; }
+        public int LevelCost { get; }
+        private int _level;
+        public int Level
+        {
+            get { return _level; }
+            set
+            {
+                _level = value;
+                OnPropertyChanged(nameof(Level));
+                OnPropertyChanged(nameof(Cost));
+            }
+        }
+        public int Cost
+        {
+            get
+            {
+                int delta = Level-10;
+                return delta*LevelCost;
+            }
+        }
+
+        public Attribute(string name,string initials,int levelcost)
+        {
+            Name = name;
+            Initials = initials;
+            LevelCost = levelcost;
+            Level = 10;
+        }
+        
+        public static implicit operator int (Attribute attribute)
+        {
+            return attribute.Level;
+        }
+    }
+}
