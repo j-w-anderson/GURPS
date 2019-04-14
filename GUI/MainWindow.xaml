@@ -22,104 +22,6 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Label Content="ST" 
-                   Grid.Column="1" Grid.RowSpan="2" 
-                   FontSize="18"
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="DX" 
-                   Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" 
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="IQ" 
-                   Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" 
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="HT" 
-                   Grid.Column="1" Grid.Row="6" Grid.RowSpan="2" 
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.ST.Cost}"  
-                   Grid.RowSpan="2" 
-                   FontStyle="Italic" 
-                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <Label Content="{Binding CurrentCharacter.DX.Cost}" 
-                   Grid.Row="2"  Grid.RowSpan="2" 
-                   FontStyle="Italic" 
-                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <Label Content="{Binding CurrentCharacter.IQ.Cost}" 
-                   Grid.Row="4"  Grid.RowSpan="2" 
-                   FontStyle="Italic" 
-                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <Label Content="{Binding CurrentCharacter.HT.Cost}" 
-                   Grid.Row="6" Grid.RowSpan="2" 
-                   FontStyle="Italic" 
-                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <Label Content="{Binding CurrentCharacter.ST.Level}" 
-                   Grid.Column="2"  Grid.RowSpan="2"
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.DX.Level}" 
-                   Grid.Row="2" Grid.Column="2"  Grid.RowSpan="2" 
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.IQ.Level}" 
-                   Grid.Row="4"  Grid.Column="2" Grid.RowSpan="2" 
-                   FontSize="18"
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.HT.Level}" 
-                   Grid.Row="6" Grid.Column="2"  Grid.RowSpan="2"
-                   FontSize="18" 
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Button Content="^" 
-                    Click="IncrementAttribrute_Click" 
-                    Tag="ST" 
-                    Grid.Row="0" Grid.Column="4"/>
-            <Button Content="v"
-                    Click="DecrementAttribrute_Click" 
-                    Tag="ST" 
-                    Grid.Row="1" 
-                    Grid.Column="4"/>
-            <Button Content="^" 
-                    Click="IncrementAttribrute_Click" 
-                    Tag="DX" 
-                    Grid.Row="2" 
-                    Grid.Column="4"/>
-            <Button Content="v" 
-                    Click="DecrementAttribrute_Click" 
-                    Tag="DX" 
-                    Grid.Row="3"
-                    Grid.Column="4"/>
-            <Button Content="^" 
-                    Click="IncrementAttribrute_Click" 
-                    Tag="IQ"
-                    Grid.Row="4" Grid.Column="4"/>
-            <Button Content="v" 
-                    Click="DecrementAttribrute_Click" 
-                    Tag="IQ" 
-                    Grid.Row="5" Grid.Column="4"/>
-            <Button Content="^"
-                    Click="IncrementAttribrute_Click"
-                    Tag="HT" 
-                    Grid.Row="6" Grid.Column="4"/>
-            <Button Content="v"
-                    Click="DecrementAttribrute_Click"
-                    Tag="HT"
-                    Grid.Row="7" Grid.Column="4"/>
-
-        </Grid>
-        <Grid Grid.Column="1">
-            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="33"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="30"/>
@@ -134,91 +36,268 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Label Content="ST" 
+                   Grid.Column="1" 
+                   Grid.RowSpan="2" 
+                   FontSize="18"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="DX" 
+                   Grid.Column="1" Grid.Row="2" 
+                   Grid.RowSpan="2" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="IQ" 
+                   Grid.Column="1" Grid.Row="4" 
+                   Grid.RowSpan="2" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Column="1" Grid.Row="6" 
+                   Grid.RowSpan="2" >
+                <Label Content="HT" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </Border>
+            <Label Content="SP"
+                   Grid.Column="1" Grid.Row="8"
+                   Grid.RowSpan="2" 
+                   FontSize="18"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             <Label Content="HP" 
-                   Grid.Column="1" Grid.RowSpan="2" 
+                   Grid.Column="5" 
+                   Grid.RowSpan="2" 
                    FontSize="18"
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             <Label Content="WL" 
-                   Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" 
+                   Grid.Column="5" Grid.Row="2" 
+                   Grid.RowSpan="2" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             <Label Content="PR" 
-                   Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" 
+                   Grid.Column="5" Grid.Row="4" 
+                   Grid.RowSpan="2" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="FP" 
-                   Grid.Column="1" Grid.Row="6" Grid.RowSpan="2" 
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Column="5" Grid.Row="6"
+                   Grid.RowSpan="2" >
+                <Label Content="FP" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.HP.Cost}"  
+            </Border>
+            <Label Content="MV" 
+                   Grid.Column="5" Grid.Row="8"
+                   Grid.RowSpan="2" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+            <!-- Costs -->
+            <Label Content="{Binding CurrentCharacter.ST.Cost}"  
+                   Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Label Content="{Binding CurrentCharacter.DX.Cost}" 
+                   Grid.Row="2"  
+                   Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Label Content="{Binding CurrentCharacter.IQ.Cost}" 
+                   Grid.Row="4"  
+                   Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Row="6" 
+                   Grid.RowSpan="2" >
+                <Label Content="{Binding CurrentCharacter.HT.Cost}" 
+                   Grid.Row="6" 
+                   Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            </Border>
+            <Label Content="{Binding CurrentCharacter.SP.Cost}" 
+                   Grid.Row="8"
+                   Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Label Content="{Binding CurrentCharacter.HP.Cost}" 
+                   Grid.Column="4"
                    Grid.RowSpan="2" 
                    FontStyle="Italic" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             <Label Content="{Binding CurrentCharacter.WL.Cost}" 
-                   Grid.Row="2"  Grid.RowSpan="2" 
+                   Grid.Column="4"  Grid.Row="2" 
+                   Grid.RowSpan="2" 
                    FontStyle="Italic" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             <Label Content="{Binding CurrentCharacter.PR.Cost}" 
-                   Grid.Row="4"  Grid.RowSpan="2" 
+                   Grid.Column="4" Grid.Row="4"
+                   Grid.RowSpan="2" 
                    FontStyle="Italic" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Column="4" Grid.Row="6" 
+                   Grid.RowSpan="2" >
             <Label Content="{Binding CurrentCharacter.FP.Cost}" 
-                   Grid.Row="6" Grid.RowSpan="2" 
                    FontStyle="Italic" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <Label Content="{Binding CurrentCharacter.HP.Level}" 
+            </Border>
+            <Label Content="{Binding CurrentCharacter.MV.Cost}" 
+                   Grid.Column="4" Grid.Row="8" Grid.RowSpan="2" 
+                   FontStyle="Italic" 
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+
+
+            <Label Content="{Binding CurrentCharacter.ST.Level}" 
                    Grid.Column="2"  Grid.RowSpan="2"
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.WL.Level}" 
+            <Label Content="{Binding CurrentCharacter.DX.Level}" 
                    Grid.Row="2" Grid.Column="2"  Grid.RowSpan="2" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.PR.Level}" 
+            <Label Content="{Binding CurrentCharacter.IQ.Level}" 
                    Grid.Row="4"  Grid.Column="2" Grid.RowSpan="2" 
                    FontSize="18"
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding CurrentCharacter.FP.Level}" 
-                   Grid.Row="6" Grid.Column="2"  Grid.RowSpan="2"
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Row="6" Grid.Column="2"  
+                    Grid.RowSpan="2">
+                <Label Content="{Binding CurrentCharacter.HT.Level}" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </Border>
+            <Label Content="{Binding CurrentCharacter.SP.Value,StringFormat=N2}" 
+                   Grid.Row="8" Grid.Column="2" Grid.RowSpan="2" 
+                   FontSize="12"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="{Binding CurrentCharacter.HP.Level}" 
+                   Grid.Column="6"  Grid.RowSpan="2"
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="{Binding CurrentCharacter.WL.Level}" 
+                   Grid.Row="2" Grid.Column="6"  Grid.RowSpan="2" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="{Binding CurrentCharacter.PR.Level}" 
+                   Grid.Row="4"  Grid.Column="6" Grid.RowSpan="2" 
+                   FontSize="18"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                   Grid.Row="6" Grid.Column="6"  
+                    Grid.RowSpan="2">
+            <Label Content="{Binding CurrentCharacter.FP.Level}" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </Border>
+            <Label Content="{Binding CurrentCharacter.MV.Value}" 
+                   Grid.Row="8" Grid.Column="6" Grid.RowSpan="2"
+                   FontSize="18" 
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+            <Button Content="^" 
+                    Click="IncrementAttribrute_Click" 
+                    Tag="ST" 
+                    Grid.Row="0" 
+                    Grid.Column="3"/>
+            <Button Content="v"
+                    Click="DecrementAttribrute_Click" 
+                    Tag="ST" 
+                    Grid.Row="1" 
+                    Grid.Column="3"/>
+            <Button Content="^" 
+                    Click="IncrementAttribrute_Click" 
+                    Tag="DX" 
+                    Grid.Row="2" 
+                    Grid.Column="3"/>
+            <Button Content="v" 
+                    Click="DecrementAttribrute_Click" 
+                    Tag="DX" 
+                    Grid.Row="3"
+                    Grid.Column="3"/>
+            <Button Content="^" 
+                    Click="IncrementAttribrute_Click" 
+                    Tag="IQ"
+                    Grid.Row="4" 
+                    Grid.Column="3"/>
+            <Button Content="v" 
+                    Click="DecrementAttribrute_Click" 
+                    Tag="IQ" 
+                    Grid.Row="5" 
+                    Grid.Column="3"/>
+            <Button Content="^"
+                    Click="IncrementAttribrute_Click"
+                    Tag="HT" 
+                    Grid.Row="6" 
+                    Grid.Column="3"/>
+            <Button Content="v"
+                    Click="DecrementAttribrute_Click"
+                    Tag="HT"
+                    Grid.Row="7"
+                    Grid.Column="3"/>
+            <Button Content="^"
+                    Click="IncrementAttribrute_Click"
+                    Tag="SP" 
+                    Grid.Row="8" 
+                    Grid.Column="3"/>
+            <Button Content="v"
+                    Click="DecrementAttribrute_Click"
+                    Tag="SP"
+                    Grid.Row="9"
+                    Grid.Column="3"/>
             <Button Content="^" 
                     Click="IncrementAttribrute_Click" 
                     Tag="HP" 
-                    Grid.Row="0" Grid.Column="4"/>
+                    Grid.Row="0"
+                    Grid.Column="7"/>
             <Button Content="v"
                     Click="DecrementAttribrute_Click" 
                     Tag="HP" 
                     Grid.Row="1" 
-                    Grid.Column="4"/>
+                    Grid.Column="7"/>
             <Button Content="^" 
                     Click="IncrementAttribrute_Click" 
                     Tag="WL" 
                     Grid.Row="2" 
-                    Grid.Column="4"/>
+                    Grid.Column="7"/>
             <Button Content="v" 
                     Click="DecrementAttribrute_Click" 
                     Tag="WL" 
                     Grid.Row="3"
-                    Grid.Column="4"/>
+                    Grid.Column="7"/>
             <Button Content="^" 
                     Click="IncrementAttribrute_Click" 
                     Tag="PR"
-                    Grid.Row="4" Grid.Column="4"/>
+                    Grid.Row="4" 
+                    Grid.Column="7"/>
             <Button Content="v" 
                     Click="DecrementAttribrute_Click" 
                     Tag="PR" 
-                    Grid.Row="5" Grid.Column="4"/>
+                    Grid.Row="5" 
+                    Grid.Column="7"/>
             <Button Content="^"
                     Click="IncrementAttribrute_Click"
                     Tag="FP" 
-                    Grid.Row="6" Grid.Column="4"/>
+                    Grid.Row="6" 
+                    Grid.Column="7"/>
             <Button Content="v"
                     Click="DecrementAttribrute_Click"
                     Tag="FP"
-                    Grid.Row="7" Grid.Column="4"/>
-
+                    Grid.Row="7" 
+                    Grid.Column="7"/>
+            <Button Content="^"
+                    Click="IncrementAttribrute_Click"
+                    Tag="MV" 
+                    Grid.Row="8" 
+                    Grid.Column="7"/>
+            <Button Content="v"
+                    Click="DecrementAttribrute_Click"
+                    Tag="MV"
+                    Grid.Row="9"
+                    Grid.Column="7"/>
         </Grid>
     </Grid>
 </Window>

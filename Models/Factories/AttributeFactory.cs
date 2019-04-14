@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Engine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,13 +19,15 @@ namespace Engine
             _standardAttributes.Add(new Attribute("Intelligence", "IQ", 20));
             _standardAttributes.Add(new Attribute("Dexterity", "DX", 20));
             _standardAttributes.Add(new Attribute("Health", "HT", 10));
-            _standardAttributes.Add(new SecondaryAttribute("Hit Points", "HP", 2));
-            _standardAttributes.Add(new SecondaryAttribute("Willpower", "WL", 3));
-            _standardAttributes.Add(new SecondaryAttribute("Perception", "PR", 5));
-            _standardAttributes.Add(new SecondaryAttribute("Fatique Points", "FP", 2));
+            _standardAttributes.Add(new Attribute("Hit Points", "HP", 2));
+            _standardAttributes.Add(new Attribute("Willpower", "WL", 5));
+            _standardAttributes.Add(new Attribute("Perception", "PR", 5));
+            _standardAttributes.Add(new Attribute("Fatique Points", "FP", 2));
+            _standardAttributes.Add(new SpeedAttribute("Basic Speed", "SP", 5));
+            _standardAttributes.Add(new SpeedAttribute("Basic Move", "MV", 5));
         }
 
-        public static Attribute getAttribute(string initials, Attribute link=null)
+        public static Attribute getAttribute(string initials, Attribute link=null,Attribute link2=null)
         {
             Attribute fetch = _standardAttributes.FirstOrDefault(att => att.Initials == initials);
             if(fetch == null)
@@ -34,8 +37,10 @@ namespace Engine
             if (link == null)
             {
                 return new Attribute(fetch.Name, fetch.Initials, fetch.LevelCost);
+            } else if(link2==null) {
+                return new Attribute(fetch.Name, fetch.Initials, fetch.LevelCost, link);
             } else {
-                return new SecondaryAttribute(fetch.Name, fetch.Initials, fetch.LevelCost, link);
+                return new SpeedAttribute(fetch.Name, fetch.Initials, fetch.LevelCost, link, link2);
             }
         }
     }

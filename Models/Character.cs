@@ -21,8 +21,8 @@ namespace Engine
         public Attribute FP { get; set; }
 
 
-        public int Move { get; set; }
-        public float Speed { get; set; }
+        public SpeedAttribute SP { get; set; }
+        public SpeedAttribute MV { get; set; }
 
         public ObservableCollection<Trait> Advantages { get; set; }
         public ObservableCollection<Trait> Disadvantage { get; set; }
@@ -41,7 +41,9 @@ namespace Engine
             WL = AttributeFactory.getAttribute("WL", IQ);
             PR = AttributeFactory.getAttribute("PR", IQ);
             FP = AttributeFactory.getAttribute("FP", HT);
-            Attributes = new List<Attribute>() { ST, IQ, DX, HT, HP, WL, PR, FP };
+            SP = (SpeedAttribute)AttributeFactory.getAttribute("SP", DX, HT);
+            MV = (SpeedAttribute)AttributeFactory.getAttribute("MV", DX, HT);
+            Attributes = new List<Attribute>() { ST, IQ, DX, HT, HP, WL, PR, FP,SP,MV };
 
         }
 
@@ -56,6 +58,10 @@ namespace Engine
             {
                 throw new ArgumentException();
             }
+            if (target.GetType() == typeof(SpeedAttribute))
+            {
+                target = (SpeedAttribute)target;
+            }
             target.Level += direction;
             AdjustSecondaries(initials, direction);
         }
@@ -67,12 +73,18 @@ namespace Engine
                 case "ST":
                     AdjustAttribute("HP", direction);
                     break;
+                case "DX":
+                    SP.UpdateValue();
+                    MV.UpdateValue();
+                    break;
                 case "IQ":
                     AdjustAttribute("WL", direction);
                     AdjustAttribute("PR", direction);
                     break;
                 case "HT":
                     AdjustAttribute("FP", direction);
+                    SP.UpdateValue();
+                    MV.UpdateValue();
                     break;
             }
         }

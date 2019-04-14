@@ -45,7 +45,7 @@
     <Compile Include="Factories\AttributeFactory.cs" />
     <Compile Include="Factories\SkillFactory.cs" />
     <Compile Include="GameSession.cs" />
-    <Compile Include="SecondaryAttribute.cs" />
+    <Compile Include="SpeedAttribute.cs" />
     <Compile Include="Trait.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Item.cs" />

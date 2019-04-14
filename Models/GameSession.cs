@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Engine;
 
-namespace GUI
+namespace Engine
 {
     public class GameSession: INotifyPropertyChanged
     {
