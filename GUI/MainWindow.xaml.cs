@@ -44,5 +44,10 @@ namespace GUI
             _gameSession.CurrentCharacter.AdjustAttribute(initials, -1);
 
         }
+
+        private void AddTrait_Click(object sender, RoutedEventArgs e)
+        {
+            _gameSession.CurrentCharacter.AddTrait();
+        }
     }
 }

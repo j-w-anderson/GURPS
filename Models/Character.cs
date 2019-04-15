@@ -24,12 +24,11 @@ namespace Engine
         public SpeedAttribute SP { get; set; }
         public SpeedAttribute MV { get; set; }
 
-        public ObservableCollection<Trait> Advantages { get; set; }
-        public ObservableCollection<Trait> Disadvantage { get; set; }
-        public ObservableCollection<Skill> Skills { get; set; }
-        public ObservableCollection<Spell> Spells { get; set; }
-        public ObservableCollection<Item> Equipment { get; set; }
-        public ObservableCollection<Weapon> Weapons { get; set; }
+        public ObservableCollection<Trait> Traits { get; set; } = new ObservableCollection<Trait>();
+        public ObservableCollection<Skill> Skills { get; set; } = new ObservableCollection<Skill>();
+        public ObservableCollection<Spell> Spells { get; set; } = new ObservableCollection<Spell>();
+        public ObservableCollection<Item> Equipment { get; set; } = new ObservableCollection<Item>();
+        public ObservableCollection<Weapon> Weapons { get; set; } = new ObservableCollection<Weapon>();
 
 
         private List<Attribute> Attributes { get; set; }
@@ -44,7 +43,11 @@ namespace Engine
             SP = (SpeedAttribute)AttributeFactory.getAttribute("SP", DX, HT);
             MV = (SpeedAttribute)AttributeFactory.getAttribute("MV", DX, HT);
             Attributes = new List<Attribute>() { ST, IQ, DX, HT, HP, WL, PR, FP,SP,MV };
+        }
 
+        public void AddTrait()
+        {
+            Traits.Add(new Trait());
         }
 
         public void AdjustAttribute(string initials, int direction)

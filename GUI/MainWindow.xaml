@@ -14,7 +14,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -141,7 +142,7 @@
             <Border BorderBrush="Black" BorderThickness="0 0 0 1"
                    Grid.Column="4" Grid.Row="6" 
                    Grid.RowSpan="2" >
-            <Label Content="{Binding CurrentCharacter.FP.Cost}" 
+                <Label Content="{Binding CurrentCharacter.FP.Cost}" 
                    FontStyle="Italic" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             </Border>
@@ -189,7 +190,7 @@
             <Border BorderBrush="Black" BorderThickness="0 0 0 1"
                    Grid.Row="6" Grid.Column="6"  
                     Grid.RowSpan="2">
-            <Label Content="{Binding CurrentCharacter.FP.Level}" 
+                <Label Content="{Binding CurrentCharacter.FP.Level}" 
                    FontSize="18" 
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             </Border>
@@ -299,5 +300,45 @@
                     Grid.Row="9"
                     Grid.Column="7"/>
         </Grid>
+        <!-- Damage-->
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Damage"
+                   FontSize="10"
+                   HorizontalAlignment="Left"
+                   Grid.ColumnSpan="4"/>
+            <Label Content="Thr:"
+                   FontSize="14"
+                   Grid.Row="1"/>
+            <Label Content="{Binding CurrentCharacter.ThrustDamage.AsString}"
+                   FontSize="14"
+                   Grid.Row="1" Grid.Column="1"/>
+            <Label Content="Swg:"
+                   FontSize="14"
+                   Grid.Row="1" Grid.Column="2"/>
+            <Label Content="{Binding CurrentCharacter.SwingDamage.AsString}"
+                   FontSize="14"
+                   Grid.Row="1" Grid.Column="3"/>
+        </Grid>
+        <Border BorderThickness="1" Grid.Row="2">
+
+            <DataGrid ItemsSource="{Binding CurrentCharacter.Traits}"
+                      AutoGenerateColumns="False"
+                      HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Description"
+                                        Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </Window>
