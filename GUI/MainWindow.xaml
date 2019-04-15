@@ -333,10 +333,11 @@
 
             <DataGrid ItemsSource="{Binding CurrentCharacter.Traits}"
                       AutoGenerateColumns="False"
-                      HeadersVisibility="Column">
+                      HeadersVisibility="None">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Description"
-                                        Binding="{Binding Name}"/>
+                    <DataGridTextColumn Binding="{Binding Name}"
+                                        Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Cost}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>

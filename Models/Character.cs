@@ -43,6 +43,7 @@ namespace Engine
             SP = (SpeedAttribute)AttributeFactory.getAttribute("SP", DX, HT);
             MV = (SpeedAttribute)AttributeFactory.getAttribute("MV", DX, HT);
             Attributes = new List<Attribute>() { ST, IQ, DX, HT, HP, WL, PR, FP,SP,MV };
+            AddTrait();
         }
 
         public void AddTrait()
